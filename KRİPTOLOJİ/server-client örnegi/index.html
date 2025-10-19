@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Şifreli Mesaj</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #f0f0f0; }
+        .kutu { background: white; padding: 20px; max-width: 700px; margin: 0 auto; border-radius: 8px; }
+        input, select { padding: 8px; margin: 5px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        .mesaj { background: #f9f9f9; padding: 10px; margin: 10px 0; border-left: 3px solid #4CAF50; }
+    </style>
+</head>
+<body>
+    <div class="kutu">
+        <h2>Şifreli Mesajlaşma</h2>
+        
+        <label>Yöntem:</label>
+        <select id="yontem" onchange="ayarGoster()">            
+            <option value="caesar">Caesar</option>
+            <option value="substitution">Substitution</option>
+            <option value="vigenere">Vigenere</option>
+        </select>
+        
+        <div id="ayar">
+            <label>Kaydırma:</label>
+            <input type="number" id="sayi" value="3">
+        </div>
+        <br>
+        
+        <input type="text" id="mesaj" placeholder="Mesaj yaz..." style="width: 400px;">
+        <button onclick="gonder()">Şifrele</button>
+        <button onclick="cozInput()">Şifre Çöz</button>
+
+
+        
+        <div id="liste"></div>
+    </div>
+
+    <script>
+        function ayarGoster() {
+            const y = document.getElementById('yontem').value;
+            const ayar = document.getElementById('ayar');
+            if (y === 'caesar') {
+                ayar.innerHTML = '<label>Kaydırma:</label><input type="number" id="sayi" value="3">';
+            } else if (y === 'substitution') {
+                ayar.innerHTML = '<label>Anahtar:</label><input type="text" id="anahtar" value="QWERTYUIOPASDFGHJKLZXCVBNM">';
+            } else {
+                ayar.innerHTML = '<label>Kelime:</label><input type="text" id="kelime" value="ANAHTAR">';
+            }
+        }
+        
+        function caesar(text, n) {
+            let sonuc = '';
+            for (let i = 0; i < text.length; i++) {
+                let c = text[i];
+                if (c.match(/[a-z]/i)) {
+                    let kod = c.charCodeAt(0);
+                    let baz = c === c.toUpperCase() ? 65 : 97;
+                    sonuc += String.fromCharCode((kod - baz + n) % 26 + baz);
+                } else {
+                    sonuc += c;
+                }
+            }
+            return sonuc;
+        }
+        
+        function substitution(text, anahtar) {
+            const alfabe = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let sonuc = '';
+            for (let i = 0; i < text.length; i++) {
+                let c = text[i];
+                if (c.match(/[a-z]/i)) {
+                    let buyuk = c === c.toUpperCase();
+                    let index = alfabe.indexOf(c.toUpperCase());
+                    let yeni = anahtar[index];
+                    sonuc += buyuk ? yeni : yeni.toLowerCase();
+                } else {
+                    sonuc += c;
+                }
+            }
+            return sonuc;
+        }
+        
+        function vigenere(text, kelime) {
+            let sonuc = '';
+            let j = 0;
+            for (let i = 0; i < text.length; i++) {
+                let c = text[i];
+                if (c.match(/[a-z]/i)) {
+                    let buyuk = c === c.toUpperCase();
+                    let baz = buyuk ? 65 : 97;
+                    let k1 = c.toUpperCase().charCodeAt(0) - 65;
+                    let k2 = kelime[j % kelime.length].toUpperCase().charCodeAt(0) - 65;
+                    sonuc += String.fromCharCode((k1 + k2) % 26 + baz);
+                    j++;
+                } else {
+                    sonuc += c;
+                }
+            }
+            return sonuc;
+        }
+        
+        function sifrele(text) {
+            const y = document.getElementById('yontem').value;
+            if (y === 'caesar') {
+                return caesar(text, parseInt(document.getElementById('sayi').value) || 3);
+            } else if (y === 'substitution') {
+                return substitution(text, document.getElementById('anahtar').value);
+            } else {
+                return vigenere(text, document.getElementById('kelime').value);
+            }
+        }
+        
+        function coz(text, y, p) {
+            if (y === 'caesar') {
+                return caesar(text, 26 - p);
+            } else if (y === 'substitution') {
+                const alfabe = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                let sonuc = '';
+                for (let i = 0; i < text.length; i++) {
+                    let c = text[i];
+                    if (c.match(/[a-z]/i)) {
+                        let buyuk = c === c.toUpperCase();
+                        let index = p.indexOf(c.toUpperCase());
+                        sonuc += buyuk ? alfabe[index] : alfabe[index].toLowerCase();
+                    } else {
+                        sonuc += c;
+                    }
+                }
+                return sonuc;
+            } else {
+                let sonuc = '';
+                let j = 0;
+                for (let i = 0; i < text.length; i++) {
+                    let c = text[i];
+                    if (c.match(/[a-z]/i)) {
+                        let buyuk = c === c.toUpperCase();
+                        let baz = buyuk ? 65 : 97;
+                        let k1 = c.toUpperCase().charCodeAt(0) - 65;
+                        let k2 = p[j % p.length].toUpperCase().charCodeAt(0) - 65;
+                        sonuc += String.fromCharCode((k1 - k2 + 26) % 26 + baz);
+                        j++;
+                    } else {
+                        sonuc += c;
+                    }
+                }
+                return sonuc;
+            }
+        }
+        
+        async function gonder() {
+            const m = document.getElementById('mesaj').value;
+            if (!m) return alert('Mesaj yok!');
+            
+            const y = document.getElementById('yontem').value;
+            let p = y === 'caesar' ? parseInt(document.getElementById('sayi').value) : 
+                    y === 'substitution' ? document.getElementById('anahtar').value : 
+                    document.getElementById('kelime').value;
+            
+            const s = sifrele(m);
+            
+            await fetch('http://127.0.0.1:8000/gonder', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({sifre: s, orijinal: m, yontem: y, param: p})
+            });
+            
+            document.getElementById('mesaj').value = '';
+            al();
+        }
+        
+        async function al() {
+            const r = await fetch('http://127.0.0.1:8000/al');
+            const d = await r.json();
+            const liste = document.getElementById('liste');
+            
+            if (d.mesajlar.length === 0) {
+                liste.innerHTML = '<p>Mesaj yok</p>';
+            } else {
+                liste.innerHTML = '<h3>Mesajlar:</h3>' + d.mesajlar.map(m => 
+                    '<div class="mesaj">Şifreli: ' + m.sifre + '<br>Açık: ' + coz(m.sifre, m.yontem, m.param) + '</div>'
+                ).join('');
+            }
+        }
+
+
+
+     async function cozInput() {
+    const text = document.getElementById('mesaj').value;
+    if (!text) {
+        alert("Lütfen çözülecek şifreli metni gir.");
+        return;
+    }
+
+    const y = document.getElementById('yontem').value;
+    let p;
+
+    if (y === 'caesar') {
+        p = parseInt(document.getElementById('sayi').value) || 3;
+    } else if (y === 'substitution') {
+        p = document.getElementById('anahtar').value;
+    } else {
+        p = document.getElementById('kelime').value;
+    }
+
+    // 🔹 Sunucuya /coz isteği gönder
+    const response = await fetch('http://127.0.0.1:8000/coz', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ sifre: text, yontem: y, param: p })
+    });
+
+    const data = await response.json();
+
+    // 🔹 Gelen sonucu ekrana yaz
+    document.getElementById('liste').innerHTML = `
+        <div class="mesaj">
+            <b>Çözülmüş Mesaj:</b> ${data.cozulmus}
+        </div>
+    `;
+}
+
+
+    </script>
+</body>
+</html>
