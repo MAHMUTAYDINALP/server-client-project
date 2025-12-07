@@ -1,4 +1,4 @@
- 323275 123456
+ 323275 123456    //denenecek şifrelerin oldugu liste
  212303 123456789
   71638 linkedin
   65176 galatasaray

@@ -1,0 +1,2 @@
+Blockchain nedir ve nasıl çalışır ? (sınav sorusu) (kod sunumu olursa + 10P)
+Cookie Güvenliği: HttpOnly ve Secure Flag (sınav sorusu)
