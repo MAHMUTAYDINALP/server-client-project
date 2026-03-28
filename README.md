@@ -41,7 +41,7 @@ Sistem sadece modern algoritmaları değil, kriptolojinin tarihsel gelişimini g
 
 ---
 
-###3. Kriptoanaliz: Brute Force (Kaba Kuvvet) Saldırı Simülasyonu
+### 3. Kriptoanaliz: Brute Force (Kaba Kuvvet) Saldırı Simülasyonu
 Bir şifreleme sisteminin gücü, anahtar uzayının (key space) büyüklüğü ile ölçülür. Projede, zayıf algoritmaların (Örn: Sezar, Vigenere veya kısa anahtarlı sistemler) nasıl kırılabileceğini uygulamalı olarak göstermek için bir **Brute Force Saldırı Modülü** geliştirilmiştir.
 * Algoritma, şifreli metni (Ciphertext) çözmek için olası tüm anahtar kombinasyonlarını sistematik olarak dener.
 * Bu simülasyon, modern sistemlerde (AES-128/256) brute force saldırılarının neden pratik olarak imkansız olduğunu kanıtlamak ve anahtar uzunluğunun önemini vurgulamak amacıyla rapora dahil edilmiştir.
