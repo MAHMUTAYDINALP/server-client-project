@@ -1,6 +1,8 @@
 `# 🔐 Kriptografik Haberleşme Sistemi (Secure Client-Server Comm)
 
-Bu proje, temel şifreleme algoritmalarından (Sezar, Vigenere) başlayıp, modern kriptografik mimarilere (AES, RSA, ECC) kadar uzanan geniş bir yelpazede geliştirilmiş, uçtan uca güvenli bir **İstemci-Sunucu (Client-Server)** haberleşme sistemidir.Uygulama, ağ üzerinde iletilen verilerin üçüncü şahıslar tarafından okunamayacak şekilde şifrelenmesini (Confidentiality) ve güvenli anahtar dağıtımını (Key Exchange) hedeflemektedir.kütüphane kullanılarak AES,DES,RSA şifreleme yöntemleri kodlanmış ve wireshark takibi gözlemlenerek dökümente edilmiştir.Aynı zamanda kütüphane kullanmadan manuel bir şekilde AES VE DES kodlanmış olup anahtar dagıtımı ise eliptik egri ve RSA işle saglanıp wireshark ile gözlemlenip görseller ile desteklenmiştir.
+Bu proje, temel şifreleme algoritmalarından (Sezar, Vigenere) başlayıp, modern kriptografik mimarilere (AES, RSA, ECC) kadar uzanan geniş bir yelpazede geliştirilmiş, uçtan uca güvenli bir **İstemci-Sunucu (Client-Server)** haberleşme sistemidir.Uygulama, ağ üzerinde iletilen verilerin üçüncü şahıslar tarafından okunamayacak şekilde şifrelenmesini (Confidentiality) ve güvenli anahtar dağıtımını (Key Exchange) hedeflemektedir.
+
+Kütüphane kullanılarak AES,DES,RSA şifreleme yöntemleri kodlanmış ve wireshark takibi gözlemlenerek dökümente edilmiştir.Aynı zamanda kütüphane kullanmadan manuel bir şekilde AES VE DES kodlanmış olup anahtar dagıtımı ise eliptik egri ve RSA işle saglanıp wireshark ile gözlemlenip görseller ile desteklenmiştir.
 
 > **🎓 Akademik Bilgi:**
 > Bu proje, **Mahmut Aydınalp** tarafından Karadeniz Teknik Üniversitesi (KTÜ) Yazılım Mühendisliği 3. Sınıf (1. Dönem) **Kriptoloji ve Veri Güvenliği** dersi kapsamında geliştirilmiştir.
