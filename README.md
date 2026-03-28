@@ -20,28 +20,6 @@ Sistem, Python dili ile **TCP soket programlama** altyapısı üzerine inşa edi
 
 3. **Güvenli Haberleşme (Simetrik Şifreleme):** Anahtar dağıtımı tamamlandıktan sonra, veri trafiği (mesajlaşma ve dosya transferi) daha hızlı olan **AES** veya **DES** algoritmaları ile şifrelenir.
 
----
-🖼️**TEST GÖRSELLERİ**
-
-NOT: Klasik şifreleme yöntemleri ve kütüphaneli modern yöntemlerin testleri ve dökümantasyonu ana sayfada  bulunan dökümanlar klasöründe mevcuttur.
-
-<img width="1200" height="852" alt="ceaser şifreleme" src="https://github.com/user-attachments/assets/f843cedc-2592-4b48-9edb-c6bc1815f184" />
-
-<img width="994" height="675" alt="image" src="https://github.com/user-attachments/assets/d4d4bbda-ded3-4cd7-b0db-b7d188e2470a" />
-
-<img width="1200" height="852" alt="vigenere şifreleme (1)" src="https://github.com/user-attachments/assets/918357d0-3006-4ef0-9e81-cf749567f3b1" />
-
-<img width="1200" height="852" alt="kütüphaneli AES şifreleme" src="https://github.com/user-attachments/assets/c66630f9-2ec7-4ea0-8f15-85e2b06e26af" />
-
-<img width="1200" height="852" alt="kütüphaneli DES şifreleme" src="https://github.com/user-attachments/assets/760f746e-0a90-48a5-a9ae-c938dae8f012" />
-
-<img width="1200" height="852" alt="kütüphaneli RSA şifreleme" src="https://github.com/user-attachments/assets/e4296918-1641-4d9a-875e-6123e1a06e01" />
-
-<img width="1200" height="852" alt="brute force şifre kırma" src="https://github.com/user-attachments/assets/a18a8287-4317-4e72-a150-0baa4f5f4109" />
-
-<img width="775" height="339" alt="sistem başlama" src="https://github.com/user-attachments/assets/c289482b-1312-4978-be08-f0a366f7f7bb" />
-<img width="719" height="600" alt="karşılıklı yollanan dosyaların isimleri ile saklandıgı dosya" src="https://github.com/user-attachments/assets/43846533-9e19-4d37-bf7b-227e0451f058" />
-
 
 ---
 ## 🧠 Öne Çıkan Teknik Geliştirmeler
@@ -60,6 +38,15 @@ AES algoritmasının matematiksel temellerini anlamak amacıyla standart `crypto
 
 ### 2. Algoritma Çeşitliliği
 Sistem sadece modern algoritmaları değil, kriptolojinin tarihsel gelişimini göstermek adına **Substitution, Sezar ve Vigenere** gibi klasik şifreleme yöntemlerini de desteklemektedir.
+
+---
+
+3. Kriptoanaliz: Brute Force (Kaba Kuvvet) Saldırı Simülasyonu
+Bir şifreleme sisteminin gücü, anahtar uzayının (key space) büyüklüğü ile ölçülür. Projede, zayıf algoritmaların (Örn: Sezar, Vigenere veya kısa anahtarlı sistemler) nasıl kırılabileceğini uygulamalı olarak göstermek için bir **Brute Force Saldırı Modülü** geliştirilmiştir.
+* Algoritma, şifreli metni (Ciphertext) çözmek için olası tüm anahtar kombinasyonlarını sistematik olarak dener.
+* Bu simülasyon, modern sistemlerde (AES-128/256) brute force saldırılarının neden pratik olarak imkansız olduğunu kanıtlamak ve anahtar uzunluğunun önemini vurgulamak amacıyla rapora dahil edilmiştir.
+
+> 🎥 **Video Demonstrasyon:** [Brute Force Saldırısı Nasıl Çalışır? (Videoyu İzle)]()
 
 ---
 
@@ -83,7 +70,27 @@ Sistemin gerçekten güvenli çalıştığını ispatlamak amacıyla **12345 por
 Paket analizlerinde açıkça görülmektedir ki; ağ üzerindeki veri düz metin (Plain Text) olarak değil, şifrelenmiş anlamsız bloklar halinde taşınmaktadır. Bu yapı, sistemi **Man-in-the-Middle (Ortadaki Adam)** saldırılarına karşı tam korumalı hale getirmektedir.
 
 
+---
+🖼️**TEST GÖRSELLERİ**
 
+NOT: Klasik şifreleme yöntemleri ve kütüphaneli modern yöntemlerin testleri ve dökümantasyonu ana sayfada  bulunan dökümanlar klasöründe mevcuttur.
+
+<img width="1200" height="852" alt="ceaser şifreleme" src="https://github.com/user-attachments/assets/f843cedc-2592-4b48-9edb-c6bc1815f184" />
+
+<img width="994" height="675" alt="image" src="https://github.com/user-attachments/assets/d4d4bbda-ded3-4cd7-b0db-b7d188e2470a" />
+
+<img width="1200" height="852" alt="vigenere şifreleme (1)" src="https://github.com/user-attachments/assets/918357d0-3006-4ef0-9e81-cf749567f3b1" />
+
+<img width="1200" height="852" alt="kütüphaneli AES şifreleme" src="https://github.com/user-attachments/assets/c66630f9-2ec7-4ea0-8f15-85e2b06e26af" />
+
+<img width="1200" height="852" alt="kütüphaneli DES şifreleme" src="https://github.com/user-attachments/assets/760f746e-0a90-48a5-a9ae-c938dae8f012" />
+
+<img width="1200" height="852" alt="kütüphaneli RSA şifreleme" src="https://github.com/user-attachments/assets/e4296918-1641-4d9a-875e-6123e1a06e01" />
+
+<img width="1200" height="852" alt="brute force şifre kırma" src="https://github.com/user-attachments/assets/a18a8287-4317-4e72-a150-0baa4f5f4109" />
+
+<img width="775" height="339" alt="sistem başlama" src="https://github.com/user-attachments/assets/c289482b-1312-4978-be08-f0a366f7f7bb" />
+<img width="719" height="600" alt="karşılıklı yollanan dosyaların isimleri ile saklandıgı dosya" src="https://github.com/user-attachments/assets/43846533-9e19-4d37-bf7b-227e0451f058" />
 
 ---
 
