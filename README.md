@@ -78,50 +78,53 @@ NOT: Klasik şifreleme yöntemleri ve kütüphaneli modern yöntemlerin testleri
 
 
 ---
+## *substitution şifreleme yöntemi test.
 
 <img width="994" height="675" alt="image" src="https://github.com/user-attachments/assets/d4d4bbda-ded3-4cd7-b0db-b7d188e2470a" />
 
-*substitution şifreleme yöntemi test.
 
 ---
+## *vigenere şifreleme yöntemi test.
 
 <img width="1200" height="852" alt="vigenere şifreleme (1)" src="https://github.com/user-attachments/assets/918357d0-3006-4ef0-9e81-cf749567f3b1" />
 
-*vigenere şifreleme yöntemi test.
 
 ---
+## *KÜTÜPHANELİ AES ŞİFRELEME VE WİRESHARK TAKİBİ.
 
 <img width="1200" height="852" alt="kütüphaneli AES şifreleme" src="https://github.com/user-attachments/assets/c66630f9-2ec7-4ea0-8f15-85e2b06e26af" />
 
-*KÜTÜPHANELİ AES ŞİFRELEME VE WİRESHARK TAKİBİ.
 
 ---
+## *KÜTÜPHANELİ DES ŞİFRELEME VE WİRESHARK TAKİBİ.
 
 <img width="1200" height="852" alt="kütüphaneli DES şifreleme" src="https://github.com/user-attachments/assets/760f746e-0a90-48a5-a9ae-c938dae8f012" />
 
-*KÜTÜPHANELİ DES ŞİFRELEME VE WİRESHARK TAKİBİ.
 
 ---
+## *KÜTÜPHANELİ RSA ŞİFRELEME VE WİRESHARK TAKİBİ.
 
 <img width="1200" height="852" alt="kütüphaneli RSA şifreleme" src="https://github.com/user-attachments/assets/e4296918-1641-4d9a-875e-6123e1a06e01" />
 
-*KÜTÜPHANELİ RSA ŞİFRELEME VE WİRESHARK TAKİBİ.
 ---
-
+## **🔓BRUTE FORCE İLE ŞİFRE KIRMA UYGULAMASI. 
 <img width="1200" height="852" alt="brute force şifre kırma" src="https://github.com/user-attachments/assets/a18a8287-4317-4e72-a150-0baa4f5f4109" />
 
-**🔓BRUTE FORCE İLE ŞİFRE KIRMA UYGULAMASI. 
+
 ---
+
+## *SERVER-CLİENT SİSTEM BAŞLATMA.
 
 <img width="775" height="339" alt="sistem başlama" src="https://github.com/user-attachments/assets/c289482b-1312-4978-be08-f0a366f7f7bb" />
 
-*SERVER-CLİENT SİSTEM BAŞLATMA.
+
 
 ---
+## *KARŞILIKLI YOLLANAN DOSYALARIN SAHİP İSİMLERİYLE TUTULDUGU KLASÖR.
 
 <img width="719" height="600" alt="karşılıklı yollanan dosyaların isimleri ile saklandıgı dosya" src="https://github.com/user-attachments/assets/43846533-9e19-4d37-bf7b-227e0451f058" />
 
-*KARŞILIKLI YOLLANAN DOSYALARIN SAHİP İSİMLERİYLE TUTULDUGU KLASÖR.
+
 ---
 
 ## 🚀 Kurulum ve Çalıştırma
