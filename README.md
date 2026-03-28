@@ -1,4 +1,4 @@
-🔐 Kriptografik Haberleşme Sistemi 
+![bruteforceifrekrma-ezgif com-video-to-webp-converter](https://github.com/user-attachments/assets/59a55951-4024-4d1b-babf-a00b061428ac)🔐 Kriptografik Haberleşme Sistemi 
 
 Bu proje, temel şifreleme algoritmalarından (Sezar, Vigenere) başlayıp, modern kriptografik mimarilere (AES, RSA, ECC) kadar uzanan geniş bir yelpazede geliştirilmiş, uçtan uca güvenli bir **İstemci-Sunucu (Client-Server)** haberleşme sistemidir.Uygulama, ağ üzerinde iletilen verilerin üçüncü şahıslar tarafından okunamayacak şekilde şifrelenmesini (Confidentiality) ve güvenli anahtar dağıtımını (Key Exchange) hedeflemektedir.
 
@@ -46,7 +46,8 @@ Bir şifreleme sisteminin gücü, anahtar uzayının (key space) büyüklüğü 
 * Algoritma, şifreli metni (Ciphertext) çözmek için olası tüm anahtar kombinasyonlarını sistematik olarak dener.
 * Bu simülasyon, modern sistemlerde (AES-128/256) brute force saldırılarının neden pratik olarak imkansız olduğunu kanıtlamak ve anahtar uzunluğunun önemini vurgulamak amacıyla rapora dahil edilmiştir.
 
-> 🎥 **Video Demonstrasyon:** [Brute Force Saldırısı Nasıl Çalışır? (Videoyu İzle)]()
+> 🎥 **Video Demonstrasyon:** [Brute Force Saldırısı Nasıl Çalışır? (Videoyu İzle)](![Uploading bruteforcesifrekirma.webp…]()
+)
 
 ---
 
