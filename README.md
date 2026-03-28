@@ -78,13 +78,13 @@ NOT: Klasik şifreleme yöntemleri ve kütüphaneli modern yöntemlerin testleri
 
 
 ---
-## *substitution şifreleme yöntemi test.
+## *SUBSTİTUTİON ŞİFRELEME YÖNTEMİ TEST.
 
 <img width="994" height="675" alt="image" src="https://github.com/user-attachments/assets/d4d4bbda-ded3-4cd7-b0db-b7d188e2470a" />
 
 
 ---
-## *vigenere şifreleme yöntemi test.
+## *VİGENERE ŞİFRELEME YÖNTEMİ TEST.
 
 <img width="1200" height="852" alt="vigenere şifreleme (1)" src="https://github.com/user-attachments/assets/918357d0-3006-4ef0-9e81-cf749567f3b1" />
 
